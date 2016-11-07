@@ -12,7 +12,7 @@ noextract=("LibraryComplexityPlotter-${pkgver}.jar")
 md5sums=('SKIP' 'SKIP')
 
 package() {
-  install -D -m755 "${srcdir}/$realnamecli" "${pkgdir}/opt/$pkgname/LibraryComplexityPlotter-${pkgver}.jar"
+  install -D -m755 "${srcdir}/LibraryComplexityPlotter-${pkgver}.jar" "${pkgdir}/opt/$pkgname/LibraryComplexityPlotter-${pkgver}.jar"
   install -D -m755 "${srcdir}/starter.sh" "${pkgdir}/opt/$pkgname/starter.sh"
   install -D -m755 "${pkgdir}/opt/$pkgname/starter.sh" "${pkgdir}/usr/bin/lcp"
 }
