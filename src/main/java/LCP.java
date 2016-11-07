@@ -129,8 +129,8 @@ public class LCP {
 
         final XYPlot plot = chart.getXYPlot();
         plot.setBackgroundPaint(Color.white);
-        plot.setDomainGridlinePaint(Color.white);
-        plot.setRangeGridlinePaint(Color.white);
+        plot.setDomainGridlinePaint(Color.gray);
+        plot.setRangeGridlinePaint(Color.gray);
 
 
         LegendItemCollection legendItemsOld = plot.getLegendItems();
@@ -142,7 +142,7 @@ public class LCP {
         NumberAxis xAxis = (NumberAxis) plot.getDomainAxis();
         NumberAxis yAxis = (NumberAxis) plot.getRangeAxis();
         xAxis.setRange(0.00, x_max);
-       // xAxis.setTickUnit(new NumberTickUnit(100000));
+        xAxis.setTickUnit(new NumberTickUnit(1000000000));
         xAxis.setVerticalTickLabels(true);
         yAxis.setVerticalTickLabels(true);
         yAxis.setRange(0.0, yMax+0.05);
