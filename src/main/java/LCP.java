@@ -145,6 +145,8 @@ public class LCP {
         xAxis.setVerticalTickLabels(true);
         yAxis.setVerticalTickLabels(true);
         yAxis.setRange(0.0, yMax+0.05);
+        xAxis.setTickUnit(new NumberTickUnit(x_max/3));
+        yAxis.setTickUnit(new NumberTickUnit(y_max/3));
         //if(yMax+0.1 > 0.5){
           //  yAxis.setTickUnit(new NumberTickUnit(1000));
         //} else {
