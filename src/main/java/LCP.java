@@ -24,6 +24,7 @@ import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -145,8 +146,10 @@ public class LCP {
         xAxis.setVerticalTickLabels(true);
         yAxis.setVerticalTickLabels(true);
         yAxis.setRange(0.0, yMax+0.05);
-        xAxis.setTickUnit(new NumberTickUnit(x_max/3));
-        yAxis.setTickUnit(new NumberTickUnit(y_max/3));
+
+        NumberFormat formatter = new DecimalFormat("0.0E00");
+        xAxis.setTickUnit(new NumberTickUnit(x_max/6, formatter));
+        yAxis.setTickUnit(new NumberTickUnit(y_max/6, formatter));
         //if(yMax+0.1 > 0.5){
           //  yAxis.setTickUnit(new NumberTickUnit(1000));
         //} else {
