@@ -1,0 +1,19 @@
+pkgname=lcp
+pkgver=0.1
+pkgrel=1
+pkgdesc="A tool to create library complexity plots for Preseq ccurve and lc_extrap output."
+arch=('any')
+url="https://github.com/apeltzer/LibraryComplexityPlotter"
+license=('GPL-3')
+depends=('java-runtime' )
+source=("LibraryComplexityPlotter-v${pkgver}.jar" "starter.sh")
+noextract=("LibraryComplexityPlotter-v${pkgver}.jar")
+
+md5sums=('SKIP' 'SKIP')
+
+package() {
+  install -D -m755 "${srcdir}/$realnamecli" "${pkgdir}/opt/$pkgname/LibraryComplexityPlotter-v${pkgver}.jar"
+  install -D -m755 "${srcdir}/starter.sh" "${pkgdir}/opt/$pkgname/starter.sh"
+  install -D -m755 "${pkgdir}/opt/$pkgname/starter.sh" "${pkgdir}/usr/bin/lcp"
+}
+

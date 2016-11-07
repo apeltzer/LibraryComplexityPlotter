@@ -34,11 +34,15 @@ import java.util.Locale;
  * Created by peltzer on 07/11/2016.
  */
 public class LCP {
+
     private double y_min = 0.0;
     private double y_max = 0.0;
     private double x_max = 0.0;
     private XYSeriesCollection xydataset;
     private String title;
+
+    static { System.setProperty("java.awt.headless", "true"); }
+
 
     public LCP(String input1, String input2, String outputpath) throws IOException, DocumentException {
         this.title = "Observed and expected complexity curve.";
