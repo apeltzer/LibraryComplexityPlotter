@@ -141,14 +141,15 @@ public class LCP {
         NumberAxis xAxis = (NumberAxis) plot.getDomainAxis();
         NumberAxis yAxis = (NumberAxis) plot.getRangeAxis();
         xAxis.setRange(0.00, x_max);
-        xAxis.setTickUnit(new NumberTickUnit(1.0));
+       // xAxis.setTickUnit(new NumberTickUnit(100000));
         xAxis.setVerticalTickLabels(true);
+        yAxis.setVerticalTickLabels(true);
         yAxis.setRange(0.0, yMax+0.05);
-        if(yMax+0.1 > 0.5){
-            yAxis.setTickUnit(new NumberTickUnit(0.05));
-        } else {
-            yAxis.setTickUnit(new NumberTickUnit(0.01));
-        }
+        //if(yMax+0.1 > 0.5){
+          //  yAxis.setTickUnit(new NumberTickUnit(1000));
+        //} else {
+        //    yAxis.setTickUnit(new NumberTickUnit(1000));
+       // }
 
 
         return chart;
