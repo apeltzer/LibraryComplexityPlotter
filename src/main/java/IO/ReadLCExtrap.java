@@ -1,4 +1,6 @@
 package IO;
+
+import java.io.File;
 import org.jfree.data.xy.XYSeries;
 
 import java.io.*;
@@ -6,25 +8,24 @@ import java.io.*;
 /**
  * Created by peltzer on 07/11/2016.
  */
-public class ReadCCurve {
+public class ReadLCExtrap {
     private BufferedReader bfr ;
     private FileReader fr;
 
-    public ReadCCurve(){
+    public ReadLCExtrap(){
 
     }
-
 
     public XYSeries readData(File input) throws IOException {
         //ignore total_read and distinct_reads lines completely, just check whether they are here!
         fr = new FileReader(input);
         bfr = new BufferedReader(fr);
 
-        XYSeries data = new XYSeries("Observed Counts and Complexity");
+        XYSeries data = new XYSeries("Extrapolated LC_Extrap Expected");
         String currLine = "";
 
         while((currLine = bfr.readLine()) != null) {
-            if(currLine.startsWith("total_reads")){
+            if(currLine.startsWith("TOTAL_READS") || currLine.startsWith("0\t0\t0\0")){
                 continue;
             }
 
@@ -37,5 +38,6 @@ public class ReadCCurve {
         return data;
 
     }
+
 
 }
