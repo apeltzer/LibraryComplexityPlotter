@@ -9,6 +9,7 @@ import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.LegendItem;
 import org.jfree.chart.LegendItemCollection;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.NumberTickUnit;
@@ -135,8 +136,9 @@ public class LCP {
 
         LegendItemCollection legendItemsOld = plot.getLegendItems();
         final LegendItemCollection legendItemsNew = new LegendItemCollection();
-        legendItemsNew.add(legendItemsOld.get(0));
-        legendItemsNew.add(legendItemsOld.get(1));
+        for (int i = 0; i < legendItemsOld.getItemCount(); i++){
+            legendItemsNew.add(legendItemsOld.get(i));
+        }
 
         // set range of axis
         NumberAxis xAxis = (NumberAxis) plot.getDomainAxis();

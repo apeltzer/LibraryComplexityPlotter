@@ -47,7 +47,7 @@ dependencies {
 jar {
     manifest {
         attributes("Implementation-Title": "LibraryComplexityPlotter",
-                "Implementation-Version": version, "main-Class": "LCP.main")
+                "Implementation-Version": version, "main-Class": "LCP")
     }
     doFirst {
         from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
