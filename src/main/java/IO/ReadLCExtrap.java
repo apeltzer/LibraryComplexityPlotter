@@ -21,7 +21,7 @@ public class ReadLCExtrap {
         fr = new FileReader(input);
         bfr = new BufferedReader(fr);
 
-        XYSeries data = new XYSeries("Extrapolated LC_Extrap Expected");
+        XYSeries data = new XYSeries("Expected Complexity when sequencing N reads.");
         String currLine = "";
 
         while((currLine = bfr.readLine()) != null) {

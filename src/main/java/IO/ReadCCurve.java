@@ -20,7 +20,7 @@ public class ReadCCurve {
         fr = new FileReader(input);
         bfr = new BufferedReader(fr);
 
-        XYSeries data = new XYSeries("Observed Counts and Complexity");
+        XYSeries data = new XYSeries("Observed Complexity based on N reads.");
         String currLine = "";
 
         while((currLine = bfr.readLine()) != null) {
