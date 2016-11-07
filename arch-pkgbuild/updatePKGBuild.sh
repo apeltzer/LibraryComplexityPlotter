@@ -6,7 +6,7 @@ VERSIONREL=1
 sed -i "s/^pkgver=.*/pkgver=$VERSION/" PKGBUILD
 sed -i "s/^pkgrel=.*/pkgrel=$VERSIONREL/" PKGBUILD
 #startscript
-sed -i "s/^VERSION=.*/VERSION=$VERSION/" starterCLI.sh
+sed -i "s/^VERSION=.*/VERSION=$VERSION/" starter.sh
 
 cp ../build/libs/*.jar . 
 makepkg -d
