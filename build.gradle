@@ -74,7 +74,7 @@ bintray {
     override = true
     pkg {
         repo = 'EAGER'
-        name = 'EAGER-CLI'
+        name = 'LCP'
         licenses = ['GPL-3.0']
         vcsUrl = "https://github.com/apeltzer/LCP"
         version {
